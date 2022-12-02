@@ -1,5 +1,7 @@
 import { Model, DataTypes } from "sequelize";
 import { componentSequelize } from "../instances/mysql";
+import validator from 'validator';
+
 
 type AccountType = 'A' | 'C';
 type PixTypeKey = 'Telefone' | 'CPF' | 'E-mail'
@@ -30,7 +32,13 @@ export class Client extends Model {
 
         this.nome = nome.trim().slice(0,45);
         this.sobrenome = sobrenome.trim().slice(0,45);
-        this.email = email
+        this.email = email;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.senha = senha;
+        this.endereco = endereco;
+        this.pix = pix;
+        this.tipo = tipo;
     }
 }
 
