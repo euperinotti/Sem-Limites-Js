@@ -1,83 +1,61 @@
-<%- include('../partials/header.ejs') %> 
+<%- include('../partials/header.ejs') %>
+<link rel="stylesheet" href="css/home.css">
+</head>
+<%- include('../partials/navbar.ejs') %>
 
-<body>
-    <section class="home-welcome center">
-        <div class="home-banner-box center">
-            <div class="banner-text">
-                <h1>BEM VINDO A SEM LIMITES</h1>
-                <p>Aproveite nosso catálogo <br> e produtos de alta qualidade</p>
-                <a href="/catalog"><input type="button" value="COMPRAR" class="banner-text-button"></a>
+    <body>
+        <section class="home-welcome center">
+            <div class="home-banner-box center">
+                <div class="banner-text">
+                    <h1>BEM VINDO A SEM LIMITES</h1>
+                    <p>Aproveite nosso catálogo <br> e produtos de alta qualidade</p>
+                    <a href="/catalog"><input type="button" value="COMPRAR" class="banner-text-button"></a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="main-category-content center">
-        <div class="category-headline center">
-            <h1>Principais Categorias</h1>
-        </div>
-
-        <div class="product-row">
-            <a href="#">
-                <div class="product-square center">
-                    <div class="ps-image-area center">
-                        <img src="images/camiseta.png">
-                    </div>
-                    <div class="ps-text-area center">
-                        <h1>Camisetas</h1>
-                        <span>Camisas a partir de R$ 79,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#">
-                <div class="product-square">
-                    <div class="ps-image-area center">
-                        <img src="images/bermuda.png">
-                    </div>
-                    <div class="ps-text-area center">
-                        <h1>Bermudas</h1>
-                        <span>Bermudas a partir de R$ 59,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#">
-                <div class="product-square center">
-                    <div class="ps-image-area center">
-                        <img src="images/calca.png">
-                    </div>
-                    <div class="ps-text-area center">
-                        <h1>Calças</h1>
-                        <span>Calças a partir de R$ 69,90</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#">
-                <div class="product-square center">
-                    <div class="ps-image-area center">
-                        <img src="images/jaqueta.png">
-                    </div>
-                    <div class="ps-text-area center">
-                        <h1>Jaquetas</h1>
-                        <span>Jaquetas a partir de R$ 189,90</span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <section class="street-section center">
-
-        <div class="street-content center">
-            <div class="container-headline">
-                <h1>STREET WEAR</h1>
-                <br>
-                <p>JAQUETAS - CAMISETAS - CALÇAS</p>
+        <section class="main-category-content center">
+            <div class="category-headline center">
+                <h1>Principais Categorias</h1>
             </div>
 
             <div class="product-row">
+                <a href="#">
+                    <div class="product-square center">
+                        <div class="ps-image-area center">
+                            <img src="images/camiseta.png">
+                        </div>
+                        <div class="ps-text-area center">
+                            <h1>Camisetas</h1>
+                            <span>Camisas a partir de R$ 79,90</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="product-square">
+                        <div class="ps-image-area center">
+                            <img src="images/bermuda.png">
+                        </div>
+                        <div class="ps-text-area center">
+                            <h1>Bermudas</h1>
+                            <span>Bermudas a partir de R$ 59,90</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="product-square center">
+                        <div class="ps-image-area center">
+                            <img src="images/calca.png">
+                        </div>
+                        <div class="ps-text-area center">
+                            <h1>Calças</h1>
+                            <span>Calças a partir de R$ 69,90</span>
+                        </div>
+                    </div>
+                </a>
+
                 <a href="#">
                     <div class="product-square center">
                         <div class="ps-image-area center">
@@ -89,9 +67,34 @@
                         </div>
                     </div>
                 </a>
-            </div>
-        </div>
-    </section>
 
-</body>
-<%- include('../partials/footer.ejs') %> 
+            </div>
+        </section>
+
+        <section class="street-section center">
+
+            <div class="street-content center">
+                <div class="container-headline">
+                    <h1>STREET WEAR</h1>
+                    <br>
+                    <p>JAQUETAS - CAMISETAS - CALÇAS</p>
+                </div>
+
+                <div class="product-row">
+                    <a href="#">
+                        <div class="product-square center">
+                            <div class="ps-image-area center">
+                                <img src="images/jaqueta.png">
+                            </div>
+                            <div class="ps-text-area center">
+                                <h1>Jaquetas</h1>
+                                <span>Jaquetas a partir de R$ 189,90</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </body>
+    <%- include('../partials/footer.ejs') %>

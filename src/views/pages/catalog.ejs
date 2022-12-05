@@ -1,16 +1,18 @@
 <%- include('../partials/header.ejs') %>
-
+<link rel="stylesheet" href="css/catalog.css">
+</head>
+<%- include('../partials/navbar.ejs') %>
     <body>
-        <section id="male-section">
-            <div class="male-section-top">
-                <div class="male-section-top-left">
+        <section id="catalog-section">
+            <div class="catalog-section-top">
+                <div class="catalog-section-top-left">
                     <h1>PRODUTOS</h1>
                 </div>
 
-                <div class="male-section-top-right">
-                    <div class="male-section-top-right-filter" onclick="filterOpen()">
+                <div class="catalog-section-top-right">
+                    <div class="catalog-section-top-right-filter" id="filter-button">
                         <span>Filtros</span>
-                        <img src="../../icons/filter-icon.svg" alt="">
+                        <img src="icons/filter.svg">
                     </div>
                 </div>
             </div>
@@ -19,13 +21,13 @@
                 <div class="aside-headline">
                     <h2>FILTROS</h2>
                 </div>
-                <form action="filter.php?filter=s" method="post">
+                <form action="#" method="post">
                     <div class="aside-menu-options">
                         <div class="aside-options">
                             <div class="aside-options-container" id="aside-options-container">
                                 <span>Tamanho</span>
-                                <img src="../../icons/plus-icon.svg" class="aside-icon-open aside-img"
-                                    id="open-icon-size" alt="">
+                                <img src="icons/plus-icon.svg" class="aside-icon-open aside-img" id="open-icon-size"
+                                    alt="">
                                 <div class="aside-suboptions-container">
                                     <input type="radio" name="aside-size" value="GG"> GG <br>
                                     <input type="radio" name="aside-size" value="G"> G <br>
@@ -41,7 +43,7 @@
                         <div class="aside-options">
                             <div class="aside-options-container">
                                 <span>Categoria</span>
-                                <img src="../../icons/plus-icon.svg" class="aside-icon-open aside-img" alt="">
+                                <img src="icons/plus-icon.svg" class="aside-icon-open aside-img">
                                 <div class="aside-suboptions-container">
                                     <input type="radio" name="aside-cate" value="<?php echo $cat['idcategoria'];?>"><br>
                                 </div>
@@ -74,7 +76,7 @@
                         var i;
 
                         for (i = 0; i < acc.length; i++) {
-                            acc[i].addEventListener('click', function () {
+                            acc[i].addEventListener('click', function filterOpen() {
                                 this.classList.toggle('active');
 
                                 var asideSubMenu = this.nextElementSibling;
@@ -90,13 +92,13 @@
                 </form>
             </aside>
 
-            <div class="male-section-container">
+            <div class="catalog-section-container">
                 <a href="product-description.php?id=<?php echo $sp['idproduto'] . " &name=" . $sp['nome']; ?>">
-                    <div class="male-section-box">
-                        <div class="male-section-box-top">
-                            <?php echo "<img src='../../images/produtos/" . $sp['Imagem'] . "'>";?>
+                    <div class="catalog-section-box">
+                        <div class="catalog-section-box-top">
+                            <img src='../../images/produtos/" . $sp['>
                         </div>
-                        <div class="male-section-box-bottom">
+                        <div class="catalog-section-box-bottom">
                             <h1></h1>
                             <span></span>
                         </div>
@@ -105,6 +107,6 @@
             </div>
 
         </section>
+        <script type="module" src="js/filterOpen.js"></script>
     </body>
-
-    </html>
+    <%- include('../partials/footer.ejs') %>
