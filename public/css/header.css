@@ -10,8 +10,7 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
@@ -19,6 +18,12 @@ body {
 a {
     text-decoration: none;
     color: white;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body, nav, #container, #container-right-side, #container-left-side, #header-options, #header-options ul, #header-options li {

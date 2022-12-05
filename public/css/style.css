@@ -12,3 +12,9 @@
     font-family: Airside Sans;
     src: url(../fonts/AirsideSans.ttf);
 }
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

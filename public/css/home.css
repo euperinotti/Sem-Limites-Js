@@ -1,97 +1,45 @@
-* {
-    box-sizing: border-box;
-}
-
-@font-face {
-    font-family: Airside Sans;
-    src: url(../fonts/AirsideSans.ttf);
-}
-
-@font-face {
-    font-family: Montserrat;
-    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
-}
-
-@font-face {
-    font-family: Dades;
-    src: url(../fonts/Dades.ttf);
-}
-
-@font-face {
-    font-family: Bahnschrift;
-    src: url(../fonts/bahnschrift.ttf);
-    font-weight: 100;
-    font-stretch: semi-condensed;
-}
-
-body {
-    margin: 0px;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+.home-welcome {
+    height: 18.75rem;
+    width: 100%;
+    background: url(../images/banner.jpg) center / cover no-repeat;
+    padding: 1.5rem;
 }
 
 .home-banner-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
     width: 100%;
-    max-width: 1300px;
-}
-
-.home-banner-section {
-    height: 300px;
-    width: 100%;
-    background-image: url(../images/banner.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 81rem;
 }
 
 .banner-text {
-    height: 250px;
-    width: 1200px;
+    height: fit-content;
+    width: 81rem;
 }
 
 .banner-text h1 {
     font-family: Airside Sans;
     color: white;
     text-shadow: black 3px 3px 0px;
-    font-size: 60px;
-    margin-top: 0px;
-    margin-bottom: 5px;
+    font-size: 3.75rem;
 }
 
 .banner-text p {
     font-family: Bahnschrift;
     color: white;
     text-shadow: black 1px 1px 0px;
-    font-size: 25px;
-    margin: 0px;
+    font-size: 1.5rem;
 }
 
 .banner-text-button { 
-	margin-top: 20px;
+	margin-top: 1.5rem;
     display: block;    
-    height: 50px;
-    width: 300px;
-    border: black 2px solid;
+    height: 3rem;
+    width: 18.75rem;
+    border: 2px solid black;
     font-family: Bahnschrift;
-    font-size: 25px;
+    font-size: 1.5rem;
     box-shadow: black 5px 5px 0px;
-    background: linear-gradient(to right, black 50%, white 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
+    background: right bottom / 200% 100% linear-gradient(to right, black 50%, white 50%);
     transition:  300ms;
-    margin-right: 0px;
     overflow: hidden;
 }
 
@@ -101,99 +49,74 @@ body {
     cursor: pointer;
 }
 
-.banner-text a {
-	display: flex;
-	width: 300px;
-	height: 50px;
-}
-
 .product-row {
-    height: 450px;
-    width: 1250px;
+    height: 28rem;
+    width: 81rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 .main-category-content {
     height: 500px;
     width: 100%;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 1.875rem 0;
 }
 
 .main-category-content .category-headline {
 	width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .category-headline h1 {
-    width: 400px;
+    width: 81rem;
     text-align: center;
     font-family: Bahnschrift;
-    font-size: 35px;
+    font-size: 2.125rem;
     color: black;
     font-weight: lighter;
-    margin: 0px;
 }
 
 .product-square {
-    height: 400px;
-    width: 300px;
+    height: 25rem;
+    width: 18.75rem;
     background-color: #EBEEEF;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    align-items: center; 
+    flex-wrap: wrap; 
 }
 
 .ps-image-area {
-    width: 300px;
-    height: 370px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 90%;
+    padding: 1.25rem;
 }
 
 .ps-image-area img {
-    height: 270px;
-    width: 270px;
+    height: 17.5rem;
+    width: 17.5rem;
     transition: 200ms;
 }
 
 .ps-image-area img:hover {
-    width: 290px;
-    height: 290px;
+    width: 18.75rem;
+    height: 18.75rem;
 }
 
 .ps-text-area {
     width: 100%;
-    height: 80px;
-    padding: 10px 20px;
-    display: flex;
+    height: 5rem;
+    padding: 0.625rem 1.25rem;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     background-color: #1b1b1b;
 }
-
 
 .ps-text-area h1 {
     width: 100%;
     font-family: Bahnschrift;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: lighter;
     color: white;
-    margin: 0px;
 }
 
 .ps-text-area h1:hover {
@@ -202,48 +125,28 @@ body {
 
 .ps-text-area span {
     width: 100%;
-    margin-top: 5px;
     font-family: Bahnschrift;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: lighter;
     color: rgb(190, 190, 190);
 }
 
-.section-banner {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 .street-section {
     width: 100%;
-    height:700px;
-    display: flex;
+    height: 43.75rem;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../images/streetwear-banner.jpg);
-    background-position: center;
-    background-position-y: -400px;
-    background-size: auto;
-    background-repeat: no-repeat;
+    background: url(../images/streetwear-banner.jpg) center -25rem / auto no-repeat;
     margin-bottom: 50px;
 }
 
 .street-content {
     width: 100%;
-    height: 650px;
-    display: flex;
+    height: 90%;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
 }
 
 .container-headline {
-    margin-top: 20px;
+    margin: 1.25rem;
     width: 100%;
 }
 
@@ -251,236 +154,13 @@ body {
     font-family: Bodoni Bd BT;
     color: white;
     text-align: center;
-    font-size: 60px;
+    font-size: 3.75rem;
 }
 
 .container-headline p {
     font-family: Bodoni Bd BT;
     color: white;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: lighter;
-}
-
-.accessories-section {
-    margin-top: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    margin-bottom: 40px;
-}
-
-.accessories-banner {
-    background-image: url(../images/accessories-background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -100px;
-    padding: 20px;
-}
-
-.accessories-section .container-headline {
-    width: 600px;
-    height: 100px;
-}
-
-.accessories-section .container-headline h1 {
-    user-select: none;
-    text-align: center;
-    font-family: Montserrat;
-    color: white;
-    margin: 15px;
-}
-
-/*------------------------------------iPAD------------------------------------*/
-
-@media (min-width:450px) and (max-width:800px) {
-    
-    body {
-        width: 100%;
-        overflow-x: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .banner-text {
-        height: 250px;
-        width: 1200px;
-        margin-left: 40px;
-    }
-
-    .main-category-content {
-        display: block;
-        height: 850px;
-        width: 100%;
-        margin-top: 30px;
-    }
-
-    .itens-box-options {
-        margin-top: 30px;
-        height: 750px;
-        background-color: white;
-        width: 100%;
-        padding: 0px 30px;
-    }
-
-    #box-square-options {
-        height: 730px;
-        width: 100%;
-        gap: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin-top: 30px;
-    }
-    
-    .box-square-text h1 {
-        font-size: 23px;
-    }
-
-    .box-square-text span {
-        font-size: 18px;
-    }
-
-    .street-section, .women-section, .accessories-section {
-        display: block;
-        height: auto;
-        width: 100%;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        background-color: white
-    }
-    
-    .banner-street-container {
-        width: 100%;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url(../images/streetwear-banner.jpg);
-        background-position: center;
-        background-position-y: -500px;
-        background-size: auto;
-        background-repeat: no-repeat;
-        z-index: -99;
-
-    }    
-
-    .women-section .container-text-area {
-        justify-content: center;
-    }
-}
-
-/*------------------------------------iPHONE X------------------------------------*/
-
-@media (min-width:300px) and (max-width:450px) {
-    
-    body {
-        width: 100%;
-        overflow-x: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .home-banner-section {
-        padding: 10px;
-        height: 350px;
-        background-position-x: -800px;
-    }
-
-    .banner-text {
-        height: 250px;
-        width: 90%;
-        margin-left: 10px;
-        text-align: center;
-    }
-
-    .main-category-content {
-        display: block;
-        height: 1600px;
-        width: 100%;
-        margin-top: 30px;
-    }
-
-    .itens-box-options {
-        margin-top: 30px;
-        height: 1500px;
-        background-color: white;
-        width: 100%;
-        padding: 0px 30px;
-    }
-
-    #box-square-options {
-        height: 1500px;
-        width: 100%;
-        gap: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .box-square-text h1 {
-        font-size: 23px;
-    }
-
-    .box-square-text span {
-        font-size: 18px;
-    }
-
-    .football-section, .women-section, .accessories-section {
-        display: block;
-        height: auto;
-        width: 100%;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        background-color: white
-    }
-    
-    .banner-football-container {
-        width: 100%;
-        height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: black;
-    }    
-
-    .banner-football-container .container-text-area {
-        padding: 5px;
-    }
-
-    .container-text-area .container-headline h1 {
-        font-size: 40px;
-    }
-    
-    .banner-football-image {
-        display: none;
-    }
-
-    .women-section .container-text-area {
-        justify-content: center;
-    }
-
-    .women-section-banner {
-        background-position-x: -250px;
-    }
-
-    .women-section-banner .container-text-area h1 {
-        font-size: 35px;
-    }
-
-    .accessories-banner {
-        background-position:center;
-    }
-
 }
