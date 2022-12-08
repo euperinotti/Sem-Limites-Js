@@ -9,5 +9,6 @@ router.get('/', Home.home);
 
 
 router.get('/catalog', Catalog.home)
+router.get('/catalog/product/name=:name&id=:idproduto', Catalog.productView)
 
 export default router

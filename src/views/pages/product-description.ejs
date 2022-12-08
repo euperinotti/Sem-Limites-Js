@@ -1,0 +1,116 @@
+<%- include('../partials/header.ejs') %>
+    <link rel="stylesheet" href="/css/product-description.css">
+    </head>
+
+    <body>
+        <%- include('../partials/navbar.ejs') %>
+
+            <section id="product-description">
+
+                <div class="left-side">
+                    <div class="ls-image">
+                        <img src="/images/produtos/<%= selectedProduct.Imagem %>">
+                    </div>
+                    <div class="ls-sub-menu">
+                        <div class="ls-sm-options">
+                            <h4>DESCRIÇÃO</h4>
+                        </div>
+                    </div>
+                    <div class="ls-sub-content">
+                        <p>
+                            <% if (selectedProduct.descricao != '') { %>
+                                <%= selectedProduct.descricao %> 
+                            <% } else { %>
+                                NENHUMA DESCRIÇÃO DISPONÍVEL
+                            <% } %> 
+                        </p>
+                    </div>
+                </div>
+
+                <div class="right-side">
+                    <div class="rs-content">
+                        <div class="rs-header">
+                            <h4 class="type-gender">
+                                <?php
+                    echo strtoupper($categoria['nome']); 
+                ?>
+                            </h4>
+                            <h1>
+                                <?php echo $produto['nome']; ?>
+                            </h1>
+                            <h4 class="color">
+                                <?php echo strtoupper($produto['cor']); ?>
+                            </h4>
+                        </div>
+                        <div class="rs-money">
+                            <div class="price-situation">
+                                <?php if($produto['desconto'] > 0){
+                    $preco1 = ($produto['desconto'] * $produto['preco']) / 100;
+                    $preco2 = $produto['preco'] - $preco1;
+                    echo "<h2 class='price' style='text-decoration: line-through;color:#4b4b4b'>R$ " . $produto['preco'] . "</h2>";
+                    echo "<h2 class='price'>R$ " . $preco2 . "</h2>";
+                } else {
+                    echo "<h2 class='price'>R$ " . $produto['preco'] . "</h2>";
+                } ?>
+                                <?php
+                        if($produto['Estoque'] > 0) {
+                            echo "<h2 class='situation' style='color: green;'>DISPONÍVEL</h2>";
+                        } else {
+                            echo "<h2 class='situation' style='color: red;'>INDISPONÍVEL</h2>";
+                        }
+                    ?>
+                            </div>
+                        </div>
+                        <div class="rs-sub-menu">
+                            <div class="sb-size">
+                                <h3>TAMANHO</h3>
+                                <a href="../support/table-sizes.php">CONFIRA A TABELA DE TAMANHOS</a>
+                                <button>
+                                    <?php echo $produto['tamanho']; ?>
+                                </button>
+                            </div>
+                            <form action="?id=<?php echo $idproduto; ?>&acc=add" method="POST">
+                                <div class="sb-quantity">
+                                    <h3>QUANTIDADE</h3>
+                                    <input type="number" name="product-quantity">
+                                </div>
+
+                        </div>
+                        <div class="rs-buttons">
+                            <?php if($produto['Estoque'] == 0 || !isset($_SESSION['idusuario'])){
+                echo "<input type='submit' value='ADICIONAR AO CARRINHO' disabled>";
+            } else {
+                echo "<input type='submit' value='ADICIONAR AO CARRINHO'>";
+            } ?>
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <?php
+$qntd = $_POST['product-quantity'];
+
+if ($_GET['acc'] == "add"){
+    $idproduto = $_GET['id'];
+    if($qntd > $produto['Estoque']){
+        echo "<script>alert('ATUALMENTE EXISTEM APENAS " . $produto['Estoque'] . " UN. DESTE PRODUTO EM ESTOQUE');</script>";
+        unset($_SESSION['carrinho'][$idproduto]);
+    } else {
+        if(!isset($_SESSION['carrinho'][$idproduto])){
+            $_SESSION['carrinho'][$idproduto] = $qntd;
+            print_r($_SESSION['carrinho']);
+            echo "<script>alert('PRODUTO ADICIONADO AO CARRINHO');</script>";
+        } else {
+            $_SESSION['carrinho'][$idproduto] += $qntd;
+            echo "<script>alert('PRODUTO ADICIONADO AO CARRINHO');
+                location.href = 'product-description.phpid={$sp['idproduto']}';</script>";
+        }
+    }
+
+}
+
+?> -->
+            <%- include('../partials/footer.ejs') %>
+    </body>

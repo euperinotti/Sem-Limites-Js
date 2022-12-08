@@ -1,112 +1,118 @@
 <%- include('../partials/header.ejs') %>
-<link rel="stylesheet" href="css/catalog.css">
-</head>
-<%- include('../partials/navbar.ejs') %>
-    <body>
-        <section id="catalog-section">
-            <div class="catalog-section-top">
-                <div class="catalog-section-top-left">
-                    <h1>PRODUTOS</h1>
-                </div>
+    <link rel="stylesheet" href="css/catalog.css">
+    </head>
+    <%- include('../partials/navbar.ejs') %>
 
-                <div class="catalog-section-top-right">
-                    <div class="catalog-section-top-right-filter" id="filter-button">
-                        <span>Filtros</span>
-                        <img src="icons/filter.svg">
+        <body>
+            <section id="catalog-section">
+                <div class="catalog-section-top">
+                    <div class="catalog-section-top-left">
+                        <h1>PRODUTOS</h1>
+                    </div>
+
+                    <div class="catalog-section-top-right">
+                        <div class="catalog-section-top-right-filter" id="filter-button">
+                            <span>Filtros</span>
+                            <img src="icons/filter.svg">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <aside id="aside-menu">
-                <div class="aside-headline">
-                    <h2>FILTROS</h2>
-                </div>
-                <form action="#" method="post">
-                    <div class="aside-menu-options">
-                        <div class="aside-options">
-                            <div class="aside-options-container" id="aside-options-container">
-                                <span>Tamanho</span>
-                                <img src="icons/plus-icon.svg" class="aside-icon-open aside-img" id="open-icon-size"
-                                    alt="">
-                                <div class="aside-suboptions-container">
-                                    <input type="radio" name="aside-size" value="GG"> GG <br>
-                                    <input type="radio" name="aside-size" value="G"> G <br>
-                                    <input type="radio" name="aside-size" value="M"> M <br>
-                                    <input type="radio" name="aside-size" value="P"> P <br>
-                                    <input type="radio" name="aside-size" value="38"> 38 <br>
-                                    <input type="radio" name="aside-size" value="39"> 39 <br>
-                                    <input type="radio" name="aside-size" value="40"> 40 <br>
-                                    <input type="radio" name="aside-size" value="10"> 41 <br>
+                <aside id="aside-menu">
+                    <div class="aside-headline">
+                        <h2>FILTROS</h2>
+                    </div>
+                    <form action="#" method="post">
+                        <div class="aside-menu-options">
+                            <div class="aside-options">
+                                <div class="aside-options-container" id="aside-options-container">
+                                    <span>Tamanho</span>
+                                    <img src="icons/plus-icon.svg" class="aside-icon-open aside-img" id="open-icon-size"
+                                        alt="">
+                                    <div class="aside-suboptions-container">
+                                        <input type="radio" name="aside-size" value="GG"> GG <br>
+                                        <input type="radio" name="aside-size" value="G"> G <br>
+                                        <input type="radio" name="aside-size" value="M"> M <br>
+                                        <input type="radio" name="aside-size" value="P"> P <br>
+                                        <input type="radio" name="aside-size" value="38"> 38 <br>
+                                        <input type="radio" name="aside-size" value="39"> 39 <br>
+                                        <input type="radio" name="aside-size" value="40"> 40 <br>
+                                        <input type="radio" name="aside-size" value="10"> 41 <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="aside-options">
+                                <div class="aside-options-container">
+                                    <span>Categoria</span>
+                                    <img src="icons/plus-icon.svg" class="aside-icon-open aside-img">
+                                    <div class="aside-suboptions-container">
+                                        <input type="radio" name="aside-cate"
+                                            value="<?php echo $cat['idcategoria'];?>"><br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="aside-options">
+                                <div class="aside-options-container">
+                                    <span>Preço</span>
+                                    <img src="../../icons/plus-icon.svg" alt="" class="aside-icon-open aside-img">
+                                    <div class="aside-suboptions-container">
+
+                                        <input type="range" name="aside-range" id="aside-range" min="0" max="1000">
+                                        <div class="value">0</div>
+                                        <script>
+                                            const slider = document.getElementById("aside-range");
+                                            const value = document.querySelector(".value");
+                                            value.textContent = slider.value;
+                                            slider.oninput = function () {
+                                                value.textContent = this.value;
+                                            }
+                                        </script>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="aside-options">
-                            <div class="aside-options-container">
-                                <span>Categoria</span>
-                                <img src="icons/plus-icon.svg" class="aside-icon-open aside-img">
-                                <div class="aside-suboptions-container">
-                                    <input type="radio" name="aside-cate" value="<?php echo $cat['idcategoria'];?>"><br>
+
+                        <script>
+                            const acc = document.getElementsByClassName('aside-icon-open');
+                            var i;
+
+                            for (i = 0; i < acc.length; i++) {
+                                acc[i].addEventListener('click', function filterOpen() {
+                                    this.classList.toggle('active');
+
+                                    var asideSubMenu = this.nextElementSibling;
+                                    if (asideSubMenu.style.display === "block") {
+                                        asideSubMenu.style.display = "none";
+                                    } else {
+                                        asideSubMenu.style.display = "block";
+                                    }
+                                })
+                            }
+                        </script>
+                        <input type="submit" value="FILTRAR" class="filter-btn">
+                    </form>
+                </aside>
+
+                <div class="catalog-section-container">
+                    <% for(i in allProducts) { %>
+                        <a href="/catalog/product/name=<%= allProducts[i].nome %>&id=<%= allProducts[i].idproduto %>">
+                            <div class="catalog-section-box">
+                                <div class="catalog-section-box-top">
+                                    <img src="images/produtos/<%= allProducts[i].Imagem %>">
+                                </div>
+                                <div class="catalog-section-box-bottom">
+                                    <h1>
+                                        <%= allProducts[i].nome %>
+                                    </h1>
+                                    <span>R$ <%= parseFloat(allProducts[i].preco).toFixed(2) %></span>
                                 </div>
                             </div>
-                        </div>
+                        </a>
+                        <% } %>
+                </div>
 
-                        <div class="aside-options">
-                            <div class="aside-options-container">
-                                <span>Preço</span>
-                                <img src="../../icons/plus-icon.svg" alt="" class="aside-icon-open aside-img">
-                                <div class="aside-suboptions-container">
-
-                                    <input type="range" name="aside-range" id="aside-range" min="0" max="1000">
-                                    <div class="value">0</div>
-                                    <script>
-                                        const slider = document.getElementById("aside-range");
-                                        const value = document.querySelector(".value");
-                                        value.textContent = slider.value;
-                                        slider.oninput = function () {
-                                            value.textContent = this.value;
-                                        }
-                                    </script>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        const acc = document.getElementsByClassName('aside-icon-open');
-                        var i;
-
-                        for (i = 0; i < acc.length; i++) {
-                            acc[i].addEventListener('click', function filterOpen() {
-                                this.classList.toggle('active');
-
-                                var asideSubMenu = this.nextElementSibling;
-                                if (asideSubMenu.style.display === "block") {
-                                    asideSubMenu.style.display = "none";
-                                } else {
-                                    asideSubMenu.style.display = "block";
-                                }
-                            })
-                        }
-                    </script>
-                    <input type="submit" value="FILTRAR" class="filter-btn">
-                </form>
-            </aside>
-
-            <div class="catalog-section-container">
-                <a href="product-description.php?id=<?php echo $sp['idproduto'] . " &name=" . $sp['nome']; ?>">
-                    <div class="catalog-section-box">
-                        <div class="catalog-section-box-top">
-                            <img src='../../images/produtos/" . $sp['>
-                        </div>
-                        <div class="catalog-section-box-bottom">
-                            <h1></h1>
-                            <span></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </section>
-        <script type="module" src="js/filterOpen.js"></script>
-    </body>
-    <%- include('../partials/footer.ejs') %>
+            </section>
+            <script type="module" src="js/filterOpen.js"></script>
+            <%- include('../partials/footer.ejs') %>
+        </body>
