@@ -31,15 +31,13 @@
                     <div class="rs-content">
                         <div class="rs-header">
                             <h4 class="type-gender">
-                                <?php
-                    echo strtoupper($categoria['nome']); 
-                ?>
+                                <%= productCategory.nome.toUpperCase() %>
                             </h4>
                             <h1>
-                                <?php echo $produto['nome']; ?>
+                                <%= selectedProduct.nome.toUpperCase() %>
                             </h1>
                             <h4 class="color">
-                                <?php echo strtoupper($produto['cor']); ?>
+                                <%= selectedProduct.cor.toUpperCase() %>
                             </h4>
                         </div>
                         <div class="rs-money">

@@ -1,10 +1,12 @@
 import { Model, DataTypes, Op } from "sequelize";
 import { componentSequelize } from "../instances/mysql";
+import { Category } from "./Category";
 
 type ProductCategory = 'Camiseta' | 'Calça' | 'Bermuda' | 'Tênis' | 'Jaqueta' | 'Moletom';
 type ProductSize = '36' | '37' | '38' | '39' | '40' | '41' | 'P' | 'M' | 'G' | 'GG';
 
 export class Product extends Model {
+    idproduto?: number;
     nome: string;
     categoria: number;
     tamanho: ProductSize;
@@ -82,3 +84,5 @@ export const Produto = componentSequelize.define<Product>('Produto',{
     tableName: 'produto',
     timestamps: false
 })
+
+Produto.hasOne(Category)
